@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web6
+  labels:
+    state: red
+    version: develop
+    region: seoul
+spec:
+  containers:
+    - name: www
+      image: httpd
+  nodeSelector:
+    region: busan

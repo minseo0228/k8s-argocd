@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: use-pvc-nfs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
+  template:
+    metadata:
+      labels:
+        app: myapp
+    spec:
+      containers:
+      - name: www
+        image: nginx
+        volumeMounts:
+          - name:  mynfs
+            mountPath: /hot
+
+
+      volumes:
+        - name: mynfs
+          persistentVolumeClaim:
+            claimName: mynfspvc

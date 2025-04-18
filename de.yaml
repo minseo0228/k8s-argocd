@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydeploy
+spec:
+  replicas: 5
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: websvr
+  template:
+    metadata:
+      labels:
+        app: websvr
+    spec:
+      containers:
+      - name: websvr
+        image: nginx:1.12

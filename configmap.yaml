@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myenv
+spec:
+  containers:
+  - name: myenv
+    image: nginx
+    envFrom:
+      - configMapRef:
+          name: glevel2

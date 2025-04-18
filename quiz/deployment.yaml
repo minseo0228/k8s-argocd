@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: quiz-deploy
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      label: nginx-testbed
+  template:
+    metadata:
+      labels:
+        label: nginx-testbed
+    spec:
+      containers:
+      - name: www
+        image: nginx:1.14
+        ports:
+        - containerPort: 80

@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web7
+  labels:
+    state: green
+    version: product
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: web7
+    image: bitnami/nginx:latest
+    command:
+      - echo
+      - "I am hungry"

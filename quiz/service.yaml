@@ -1,0 +1,10 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: quiz-svc
+spec:
+  selector:
+    label: nginx-testbed
+  ports:
+    - port:  80
+      targetPort:  80

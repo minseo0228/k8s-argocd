@@ -1,0 +1,7 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: exdb
+spec:
+  type:  ExternalName
+  externalName: www.google.co.kr
